@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // Dòng này rất quan trọng để sửa lỗi "Cannot mutate"
+    // Ép buộc tất cả repository phải khai báo tại đây
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
