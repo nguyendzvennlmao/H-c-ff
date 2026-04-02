@@ -6,11 +6,13 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
+    // Ép dự án chỉ dùng repository khai báo tại đây để tránh xung đột
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
     }
 }
+
 rootProject.name = "ArisApp"
 include ':app'
