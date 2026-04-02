@@ -14,11 +14,13 @@ android {
         versionName "1.0"
     }
 
+    // Cấu hình đường dẫn file vì cấu trúc của bạn không theo chuẩn Android Studio
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
             java.srcDirs = ['app/src/main/java']
             res.srcDirs = ['app/src/main/res']
+            assets.srcDirs = ['app/src/main/assets']
         }
     }
 
