@@ -1,11 +1,25 @@
+// 1. Cấu hình Plugin và Buildscript (Luôn để ở trên cùng)
 buildscript {
-    repositories { google(); mavenCentral() }
-    dependencies { classpath 'com.android.tools.build:gradle:8.2.2' }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.2'
+    }
 }
-allprojects { repositories { google(); mavenCentral() } }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// 2. Apply Plugin
 apply plugin: 'com.android.application'
 
+// 3. Cấu hình Android
 android {
     namespace 'com.venn.lmao.xd'
     compileSdk 34
@@ -18,7 +32,7 @@ android {
         versionName "1.0"
     }
 
-    // THÊM ĐOẠN NÀY ĐỂ FIX LỖI THIẾU FILE
+    // Chỉ định đường dẫn file vì bạn không dùng cấu trúc thư mục chuẩn
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
@@ -26,10 +40,18 @@ android {
             res.srcDirs = ['app/src/main/res']
         }
     }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+    }
 }
 
+// 4. Dependencies (Luôn để ở cuối cùng)
 dependencies {
-    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
