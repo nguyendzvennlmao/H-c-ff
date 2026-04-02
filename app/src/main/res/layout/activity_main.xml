@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="VENN LOGIN SYSTEM"
+        android:textColor="#facc15"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/ed_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_title"
+        android:layout_margin="40dp"
+        android:hint="Password: VennLMAOXD"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:background="#22FFFFFF"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ed_pass"
+        android:layout_marginHorizontal="60dp"
+        android:text="LOGIN NOW"
+        android:backgroundTint="#ff0812" />
+</RelativeLayout>
