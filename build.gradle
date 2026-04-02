@@ -1,27 +1,8 @@
-// 1. Khai báo repository cho công cụ build
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        // Sử dụng phiên bản AGP ổn định
-        classpath 'com.android.tools.build:gradle:8.2.2'
-    }
+// 1. Khai báo Plugin bằng DSL (Cách này giúp Gradle quản lý thứ tự tốt nhất)
+plugins {
+    id 'com.android.application' version '8.2.2'
 }
 
-// 2. Repository cho các thư viện ứng dụng
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-// 3. Áp dụng Plugin (Chỉ khai báo ở đây)
-apply plugin: 'com.android.application'
-
-// 4. Cấu hình Android
 android {
     namespace 'com.venn.lmao.xd'
     compileSdk 34
@@ -34,7 +15,7 @@ android {
         versionName "1.0"
     }
 
-    // Thiết lập đường dẫn code vì cấu trúc thư mục của bạn không chuẩn
+    // Chỉ định đường dẫn vì cấu trúc thư mục của bạn không chuẩn
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
@@ -49,16 +30,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
         }
     }
-    
-    // Thêm tùy chọn này để tránh xung đột tài nguyên
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
-// 5. Dependencies (Đặt ở cuối cùng)
+// 2. Khai báo thư viện
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
