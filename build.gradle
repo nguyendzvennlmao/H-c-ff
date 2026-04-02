@@ -1,6 +1,10 @@
 plugins {
-    id 'com.android.application' version '8.2.2'
+    id 'com.android.application' version '8.2.2' apply false
 }
+
+// Nếu bạn để code trong thư mục app, cấu hình này sẽ nằm ở app/build.gradle
+// Nhưng nếu bạn build trực tiếp ở gốc, hãy dùng cấu hình này:
+apply plugin: 'com.android.application'
 
 android {
     namespace 'com.venn.lmao.xd'
@@ -14,7 +18,7 @@ android {
         versionName "1.0"
     }
 
-    // Quan trọng: Vì cấu trúc của bạn không chuẩn nên phải có đoạn này
+    // Định vị lại các file do cấu trúc thư mục của bạn không chuẩn Android Studio
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
