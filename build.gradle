@@ -14,7 +14,7 @@ android {
         versionName "1.0"
     }
 
-    // Cấu hình đường dẫn file vì cấu trúc của bạn không theo chuẩn Android Studio
+    // Quan trọng: Vì cấu trúc của bạn không chuẩn nên phải có đoạn này
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
