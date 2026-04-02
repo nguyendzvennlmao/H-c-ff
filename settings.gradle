@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // Ép dự án chỉ dùng repository khai báo tại đây để tránh xung đột
+    // Dòng này rất quan trọng để sửa lỗi "Cannot mutate"
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ArisApp"
+rootProject.name = "ArisRegedit"
 include ':app'
